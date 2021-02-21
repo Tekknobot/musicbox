@@ -163,19 +163,15 @@ public class Oscillator : MonoBehaviour {
 
         // legato
         if (legatoButton.GetComponent<Toggle>().isOn == true) {
-            legatoActive = !legatoActive;        
-        }
-
-        if(legatoActive) {
-            return;
-        }    
-        else if(!legatoActive) {
             if (gameObject.name != "SynthPads") {
-                if (nextbeatTime - timeSinceLevelLoad < nextbeatTime) {
+                if (nextbeatTime - timeSinceLevelLoad < ms) {
                     gain = 0;
                 }            
             }
-        }         
+        }     
+        else {
+            return;
+        }    
     }
 
 	void OctaveOneOnClick(){      
