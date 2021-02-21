@@ -3472,6 +3472,80 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &555060044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 555060045}
+  - component: {fileID: 555060047}
+  - component: {fileID: 555060046}
+  m_Layer: 5
+  m_Name: Checkmark
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &555060045
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555060044}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2132163578}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &555060046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555060044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &555060047
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555060044}
+  m_CullTransparentMesh: 0
 --- !u!82 &556553152 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 5950515151121015122, guid: beb60ace16c917240969b409063945bf,
@@ -4399,8 +4473,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.2774, y: -661.125}
-  m_SizeDelta: {x: 522.46924, y: 20}
+  m_AnchoredPosition: {x: -3.38, y: -667.7}
+  m_SizeDelta: {x: 490.3454, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &644779606
 MonoBehaviour:
@@ -8427,6 +8501,90 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1332462500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1332462501}
+  - component: {fileID: 1332462502}
+  m_Layer: 5
+  m_Name: Legato
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1332462501
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332462500}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2132163578}
+  m_Father: {fileID: 2062394949}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -193.6, y: -568.5}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1332462502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332462500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2132163579}
+  toggleTransition: 1
+  graphic: {fileID: 555060046}
+  m_Group: {fileID: 0}
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_IsOn: 0
 --- !u!1 &1348170324
 GameObject:
   m_ObjectHideFlags: 0
@@ -13618,6 +13776,7 @@ RectTransform:
   - {fileID: 1550844632}
   - {fileID: 523391192}
   - {fileID: 642797317}
+  - {fileID: 1332462501}
   m_Father: {fileID: 806198360}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14137,6 +14296,81 @@ RectTransform:
   m_AnchoredPosition: {x: -5.0000153, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2132163577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2132163578}
+  - component: {fileID: 2132163580}
+  - component: {fileID: 2132163579}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2132163578
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132163577}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 555060045}
+  m_Father: {fileID: 1332462501}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 10, y: -10}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2132163579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132163577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2132163580
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132163577}
+  m_CullTransparentMesh: 0
 --- !u!1 &2143962953
 GameObject:
   m_ObjectHideFlags: 0
@@ -14366,6 +14600,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 2460278126629224853, guid: d5f8e2d13d8615746a175fb5be6cd773,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5f8e2d13d8615746a175fb5be6cd773, type: 3}
 --- !u!4 &493552190105431643 stripped
@@ -14513,6 +14752,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 515221597909897758, guid: a828eac97f2eef348ba4d7dfe754e96a,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 515221597909897759, guid: a828eac97f2eef348ba4d7dfe754e96a,
         type: 3}
       propertyPath: m_Name
@@ -14658,6 +14902,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 4919622218516350788, guid: ff23c8b61e9550c46bb7cbb59aa2bc6f,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 4919622218516350789, guid: ff23c8b61e9550c46bb7cbb59aa2bc6f,
         type: 3}
       propertyPath: m_Name
@@ -14753,6 +15002,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 2707266961104894867, guid: f52360f2521f7054da7d2dce9a2c2c45,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 2707266961104894868, guid: f52360f2521f7054da7d2dce9a2c2c45,
         type: 3}
       propertyPath: Priority
@@ -14888,6 +15142,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 7951094406447121330, guid: 343f5787524a1d94db7918ea0c06d1de,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 7951094406447121331, guid: 343f5787524a1d94db7918ea0c06d1de,
         type: 3}
       propertyPath: m_Name
@@ -15033,6 +15292,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 1468504585986770098, guid: b0c1b5a5009327540b77958de35c10c8,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 1468504585986770099, guid: b0c1b5a5009327540b77958de35c10c8,
         type: 3}
       propertyPath: m_Name
@@ -15200,6 +15464,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 8901357427274180515, guid: 50c056a9a5f25604c8d3de6ecf3dab28,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 8901357427274180516, guid: 50c056a9a5f25604c8d3de6ecf3dab28,
         type: 3}
       propertyPath: Priority
@@ -15335,6 +15604,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 8682429485747385976, guid: cfd3a14ef09479e47a735840a6bea33a,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 8682429485747385977, guid: cfd3a14ef09479e47a735840a6bea33a,
         type: 3}
       propertyPath: m_Name
@@ -15540,6 +15814,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 3644843318444429884, guid: eaf63d1880895304d8b1260f18b4f657,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 3644843318444429885, guid: eaf63d1880895304d8b1260f18b4f657,
         type: 3}
       propertyPath: m_Name
@@ -15625,6 +15904,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 7985103330818912346, guid: a1501e1424a39d74b83861f3c2db0c1a,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 7985103330818912347, guid: a1501e1424a39d74b83861f3c2db0c1a,
         type: 3}
       propertyPath: m_Name
@@ -15770,6 +16054,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 1136691741013834506, guid: 1acf91702afefb14a9fe6e6cb27cb76b,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 1136691741013834507, guid: 1acf91702afefb14a9fe6e6cb27cb76b,
         type: 3}
       propertyPath: m_Name
@@ -15975,6 +16264,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 861457785916407446, guid: 927c81df9c86fa24293610de58e9d9d7,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 861457785916407447, guid: 927c81df9c86fa24293610de58e9d9d7,
         type: 3}
       propertyPath: m_Name
@@ -16070,6 +16364,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 824325340517000761, guid: 3f1a60396b3678c4faa54a7fe7f0407e,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 824325340517000766, guid: 3f1a60396b3678c4faa54a7fe7f0407e,
         type: 3}
       propertyPath: Priority
@@ -16307,6 +16606,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 4768527962036808146, guid: 3684007c0bb11d6499e6cdae5a15cf24,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 4768527962036808147, guid: 3684007c0bb11d6499e6cdae5a15cf24,
         type: 3}
       propertyPath: m_Name
@@ -16462,6 +16766,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 3728037887745479467, guid: 60778b410c234b54daa6c31489868dcd,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 3728037887745479468, guid: 60778b410c234b54daa6c31489868dcd,
         type: 3}
       propertyPath: Priority
@@ -16607,6 +16916,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 8834972690935809427, guid: b9577c4d7995fd24bbafb10994a41472,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 8834972690935809428, guid: b9577c4d7995fd24bbafb10994a41472,
         type: 3}
       propertyPath: Priority
@@ -16836,6 +17150,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 4199819410591572231, guid: 679f6b29b909d014280c1a73eb9290db,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 679f6b29b909d014280c1a73eb9290db, type: 3}
 --- !u!4 &2804276014037279948 stripped
@@ -16923,6 +17242,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 2415342418558216658, guid: 55ab0b5b898f96044b1897180d915337,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 2415342418558216659, guid: 55ab0b5b898f96044b1897180d915337,
         type: 3}
       propertyPath: m_Name
@@ -17128,6 +17452,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 773800331348395270, guid: b8bd95f9072ed124cba398d0765495fd,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 773800331348395271, guid: b8bd95f9072ed124cba398d0765495fd,
         type: 3}
       propertyPath: m_Name
@@ -17285,6 +17614,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 3260847562017165756, guid: 12e07876a419dac4a97423bc063d3ab7,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 3260847562017165757, guid: 12e07876a419dac4a97423bc063d3ab7,
         type: 3}
       propertyPath: m_Name
@@ -17382,6 +17716,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 6085266153597015528, guid: a8a27994a89d8294a9f4f034a382794e,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 6085266153597015529, guid: a8a27994a89d8294a9f4f034a382794e,
         type: 3}
       propertyPath: m_Name
@@ -17537,6 +17876,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 5236905179393379993, guid: 3518285cb30674e4aba3150fa0a5e36a,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 5236905179393379998, guid: 3518285cb30674e4aba3150fa0a5e36a,
         type: 3}
       propertyPath: Priority
@@ -17742,6 +18086,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 2834975157388801047, guid: 8ed4430981b727c41a3cd85fb9e4c014,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ed4430981b727c41a3cd85fb9e4c014, type: 3}
 --- !u!1001 &4177557291432166122
@@ -17877,6 +18226,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 3691201327107941062, guid: 4315d478345326142b449f3d69a4fafd,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 3691201327107941063, guid: 4315d478345326142b449f3d69a4fafd,
         type: 3}
       propertyPath: m_Name
@@ -18032,6 +18386,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 1056328375735429583, guid: 0299db70fda40014da964cb438d18c93,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0299db70fda40014da964cb438d18c93, type: 3}
 --- !u!1001 &4494647446352501201
@@ -18177,6 +18536,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 2329498794554014351, guid: acf126e0f088027489c1f3d727968fc4,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acf126e0f088027489c1f3d727968fc4, type: 3}
 --- !u!1001 &4750430314478065490
@@ -18252,6 +18616,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 5416855112596781064, guid: cc467c43a998a8b469d9381af42a3739,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 5416855112596781065, guid: cc467c43a998a8b469d9381af42a3739,
         type: 3}
       propertyPath: m_Name
@@ -18397,6 +18766,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 2183492190119806946, guid: 6a8bdf8769917a14cb723aa683e3e834,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 2183492190119806947, guid: 6a8bdf8769917a14cb723aa683e3e834,
         type: 3}
       propertyPath: m_Name
@@ -18612,6 +18986,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 7208517367013211357, guid: d07e0a47cf48a5f448048ec78da90ac5,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d07e0a47cf48a5f448048ec78da90ac5, type: 3}
 --- !u!1001 &4921697318270776411
@@ -18687,6 +19066,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 4797480084947751258, guid: 3329684e8489a2b42a3bf5813d0c7603,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 4797480084947751259, guid: 3329684e8489a2b42a3bf5813d0c7603,
         type: 3}
       propertyPath: m_Name
@@ -19016,6 +19400,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 5353397347186476852, guid: 866ccecd0c1f7e141944fd335fdc5c6f,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 5353397347186476853, guid: 866ccecd0c1f7e141944fd335fdc5c6f,
         type: 3}
       propertyPath: m_Name
@@ -19123,6 +19512,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 6039306644601844169, guid: bf84395b297ea82458cde2a0b3ffa119,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 6039306644601844174, guid: bf84395b297ea82458cde2a0b3ffa119,
         type: 3}
       propertyPath: Priority
@@ -19258,6 +19652,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 7958249404193137098, guid: df4571a6c4bb41b4d9efcd1a888f1be8,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 7958249404193137099, guid: df4571a6c4bb41b4d9efcd1a888f1be8,
         type: 3}
       propertyPath: m_Name
@@ -19413,6 +19812,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 5495408038886742347, guid: d66ab2ebb7b7c354187d7b3f3f88fe1d,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 5495408038886742348, guid: d66ab2ebb7b7c354187d7b3f3f88fe1d,
         type: 3}
       propertyPath: Priority
@@ -19707,6 +20111,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 6049404138483736727, guid: f77d222ceb1439e40abbe41926140703,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f77d222ceb1439e40abbe41926140703, type: 3}
 --- !u!1001 &6246198285111201593
@@ -19812,6 +20221,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: noteLength
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: legato
+      value: 
+      objectReference: {fileID: 996542551}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 5231719288517554286, guid: 5b45a0984db871743a5e78f6130404c7,
         type: 3}
       propertyPath: Priority
@@ -20038,6 +20462,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 4159597567497222745, guid: 857121b2b4bbfbd4f888c0897df4c91f,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 4159597567497222750, guid: 857121b2b4bbfbd4f888c0897df4c91f,
         type: 3}
       propertyPath: Priority
@@ -20173,6 +20602,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 9145899601279974184, guid: d7f9fa03c7c9304478ae741403e43f51,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 9145899601279974185, guid: d7f9fa03c7c9304478ae741403e43f51,
         type: 3}
       propertyPath: m_Name
@@ -20318,6 +20752,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 5945204218227690640, guid: 5e1bd31a0b2e8e44b872dcb8a6a09db2,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 5945204218227690641, guid: 5e1bd31a0b2e8e44b872dcb8a6a09db2,
         type: 3}
       propertyPath: m_Name
@@ -20535,6 +20974,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 9058941571227347108, guid: 83cb54203e9c560499bd6ebe7f0e1ab1,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 9058941571227347109, guid: 83cb54203e9c560499bd6ebe7f0e1ab1,
         type: 3}
       propertyPath: m_Name
@@ -20632,6 +21076,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 8931511494490253074, guid: 11301bba0bc6c6f4dafdeb4610862bdf,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 8931511494490253075, guid: 11301bba0bc6c6f4dafdeb4610862bdf,
         type: 3}
       propertyPath: m_Name
@@ -20849,6 +21298,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 8512313113838779838, guid: 6a8557570be7ee944beffef7a0e1712b,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 8512313113838779839, guid: 6a8557570be7ee944beffef7a0e1712b,
         type: 3}
       propertyPath: m_Name
@@ -21004,6 +21458,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 713715691118982621, guid: 019de462dfc556645bfe339d83cb9ca6,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 019de462dfc556645bfe339d83cb9ca6, type: 3}
 --- !u!1001 &7953752683327085662
@@ -21089,6 +21548,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 8094480542189970251, guid: 478aff9c49b5cf14cae6cc740b44ffbe,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 8094480542189970252, guid: 478aff9c49b5cf14cae6cc740b44ffbe,
         type: 3}
       propertyPath: Priority
@@ -21294,6 +21758,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 2566223923203657621, guid: a4b39b3f681ecef45a7857a818143cda,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4b39b3f681ecef45a7857a818143cda, type: 3}
 --- !u!1001 &8062795296055374996
@@ -21369,6 +21838,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 8201324698747048666, guid: 1343a731115f6ac4bbfd95abbeaf20da,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 8201324698747048667, guid: 1343a731115f6ac4bbfd95abbeaf20da,
         type: 3}
       propertyPath: m_Name
@@ -21580,6 +22054,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 1511971411413973158, guid: 5e3ec6631edb5704d85f03c5c27b1523,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 1511971411413973159, guid: 5e3ec6631edb5704d85f03c5c27b1523,
         type: 3}
       propertyPath: m_Name
@@ -21677,6 +22156,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 7017879080840291458, guid: 91c18f03c3be9204fa68518c90ac28d6,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 7017879080840291459, guid: 91c18f03c3be9204fa68518c90ac28d6,
         type: 3}
       propertyPath: m_Name
@@ -21894,6 +22378,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
         type: 3}
+    - target: {fileID: 6741444703334536302, guid: 5d79a45f6d8ef8e4c976fbea619147ba,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
     - target: {fileID: 6741444703334536303, guid: 5d79a45f6d8ef8e4c976fbea619147ba,
         type: 3}
       propertyPath: m_Name

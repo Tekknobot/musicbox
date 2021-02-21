@@ -21,7 +21,11 @@ public class Oscillator : MonoBehaviour {
 
     public Button sineWave;
     public Button squareWave;
-    public Button triangleWave;    
+    public Button triangleWave;   
+
+    public Toggle legatoButton;
+    
+    public bool legatoActive = false;
 
     public int octaveDownInt = -12;
     public int octaveUpInt = 12;
@@ -52,7 +56,6 @@ public class Oscillator : MonoBehaviour {
 	public float ms;
 	public float nextbeatTime;
 	public float timeSinceLevelLoad;
-    public float noteLength;
 	public GameObject Pad1;
 
     void Start() {
@@ -73,6 +76,7 @@ public class Oscillator : MonoBehaviour {
 		triangleWave.onClick.AddListener(TriangleOnClick); 
 
         ////
+
 
         ColorBlock colors = sineWave.colors;
         colors.normalColor = new Color32(200, 200, 200, 255);
@@ -157,9 +161,21 @@ public class Oscillator : MonoBehaviour {
             octaveThree.Select();         
         }       
 
-        if (nextbeatTime - timeSinceLevelLoad < ms) {
-            gain = 0;
-        }            
+        // legato
+        if (legatoButton.GetComponent<Toggle>().isOn == true) {
+            legatoActive = !legatoActive;        
+        }
+
+        if(legatoActive) {
+            return;
+        }    
+        else if(!legatoActive) {
+            if (gameObject.name != "SynthPads") {
+                if (nextbeatTime - timeSinceLevelLoad < nextbeatTime) {
+                    gain = 0;
+                }            
+            }
+        }         
     }
 
 	void OctaveOneOnClick(){      
@@ -242,6 +258,10 @@ public class Oscillator : MonoBehaviour {
         colorsTriangle.normalColor = new Color32(200, 200, 200, 255);
         triangleWave.colors = colorsTriangle;  
 	}  
+
+	void LegatoOnClick(){   
+        legatoActive = true;
+	}      
 
     void OnAudioFilterRead(float[] data, int channels) {
         increment = (frequency * 2.0 * Mathf.PI / sampling_frequency);
