@@ -52,7 +52,7 @@ public class Oscillator : MonoBehaviour {
 	public float ms;
 	public float nextbeatTime;
 	public float timeSinceLevelLoad;
-    public float step;
+    public float noteLength;
 	public GameObject Pad1;
 
     void Start() {
@@ -143,8 +143,6 @@ public class Oscillator : MonoBehaviour {
         nextbeatTime = Pad1.GetComponent<OperatorTile>().nextbeatTime;
         timeSinceLevelLoad = Pad1.GetComponent<OperatorTile>().timeSinceLevelLoad;
 
-        step = nextbeatTime - timeSinceLevelLoad;
-
 		if (gameObject.name == "SynthPads") {
 			gameObject.GetComponent<Oscillator>().pitch = GameObject.Find("Pitch").GetComponent<Slider>().value;			
 		}	
@@ -159,9 +157,9 @@ public class Oscillator : MonoBehaviour {
             octaveThree.Select();         
         }       
 
-        // if (step == nextbeatTime - timeSinceLevelLoad) {
-        //     gain = 0;
-        // }            
+        if (nextbeatTime - timeSinceLevelLoad < ms) {
+            gain = 0;
+        }            
     }
 
 	void OctaveOneOnClick(){      
