@@ -159,9 +159,9 @@ public class Oscillator : MonoBehaviour {
             octaveThree.Select();         
         }       
 
-        if (step <= nextbeatTime - timeSinceLevelLoad) {
-            gain = 0;
-        }            
+        // if (step == nextbeatTime - timeSinceLevelLoad) {
+        //     gain = 0;
+        // }            
     }
 
 	void OctaveOneOnClick(){      
