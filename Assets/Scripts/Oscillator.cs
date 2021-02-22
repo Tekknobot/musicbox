@@ -59,9 +59,6 @@ public class Oscillator : MonoBehaviour {
     public float step;
 	public GameObject Pad1;
 
-    [Range(0, 0.1171875f)]
-    public float noteLength;
-
     void Start() {
         Pad1 = GameObject.Find("Pad 1");      
 
@@ -171,9 +168,11 @@ public class Oscillator : MonoBehaviour {
         if (legatoButton.GetComponent<Toggle>().isOn == true) {
             if (gameObject.name != "SynthPads") {
                 
-                if (step - noteLength > noteLength) {
-                    gain = 0;
-                }            
+                // if (step - noteLength > step) {
+                //     gain = 0;
+                // } 
+
+                StartCoroutine(MuteNote());           
             }
         }     
         else {
@@ -331,4 +330,9 @@ public class Oscillator : MonoBehaviour {
         NoteManagerMid.SetActive(false);
         NoteManagerHigh.SetActive(false); 
     }    
+
+    IEnumerator MuteNote() {      
+        yield return new WaitForSeconds(step);
+        gain = 0; 
+    }      
 }      
