@@ -335,6 +335,6 @@ public class Oscillator : MonoBehaviour {
     IEnumerator MuteNote() {      
         yield return new WaitUntil(() => Pad1.GetComponent<OperatorTile>().stepComplete == true);
         gain = 0f; 
-        Pad1.GetComponent<OperatorTile>().stepComplete = false;
+        //Pad1.GetComponent<OperatorTile>().stepComplete = false;
     }      
 }      

@@ -7196,6 +7196,11 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 0.06
       objectReference: {fileID: 0}
+    - target: {fileID: 5035296718898326384, guid: f458ab27fe47dac4e8c396b0efd60c5a,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 5035296718898326385, guid: f458ab27fe47dac4e8c396b0efd60c5a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20186,7 +20191,7 @@ PrefabInstance:
     - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
         type: 3}
       propertyPath: noteLength
-      value: 5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
         type: 3}

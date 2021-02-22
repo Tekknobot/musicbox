@@ -32,13 +32,13 @@ public class SceneLoader : MonoBehaviour {
 
     public void LoadOperatorOnClick() {
         panels.transform.position = Vector3.Slerp(startPoint, endPoint, fracComplete);     
-        snow.SetActive(false);
+        //snow.SetActive(false);
         audioSource.Stop();
     }    
 
     public void LoadSamplerOnClick() {
         panels.transform.position = Vector3.Slerp(startPoint, endPoint, fracComplete);
-        snow.SetActive(true);
+        //snow.SetActive(true);
     }  
 
     public void clearSamplesOnClick() {
