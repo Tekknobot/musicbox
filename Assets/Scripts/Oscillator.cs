@@ -165,9 +165,12 @@ public class Oscillator : MonoBehaviour {
         }    
         else if (high == true) {
             octaveThree.Select();         
-        }       
+        } 
 
-        // legato switch
+        LegatoSwitch(); 
+    }
+
+    void LegatoSwitch() {
         if (legatoButton.GetComponent<Toggle>().isOn == true) {
             if (gameObject.name != "SynthPads") {
                 StartCoroutine(MuteNote());         
@@ -175,7 +178,7 @@ public class Oscillator : MonoBehaviour {
         }     
         else {
             return;
-        }    
+        }          
     }
 
 	void OctaveOneOnClick(){      
@@ -332,5 +335,6 @@ public class Oscillator : MonoBehaviour {
     IEnumerator MuteNote() {      
         yield return new WaitUntil(() => Pad1.GetComponent<OperatorTile>().stepComplete == true);
         gain = 0f; 
+        Pad1.GetComponent<OperatorTile>().stepComplete = false;
     }      
 }      

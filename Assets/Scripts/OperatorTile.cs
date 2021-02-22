@@ -343,8 +343,6 @@ public class OperatorTile : MonoBehaviour {
     }
 
 	void Update() {
-		Debug.Log(stepComplete);
-
 		timeSinceLevelLoad = Time.timeSinceLevelLoad;
 		ms = 60 / bpm / 4;
 		
@@ -3270,6 +3268,8 @@ public class OperatorTile : MonoBehaviour {
 						}										
 
 
+
+
 						// Play synth
 						if (noteTilesLow[0,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[0][x, y] == true) {
 							SynthSource_0.GetComponent<Oscillator>().gain = synthVolume;
@@ -3280,8 +3280,6 @@ public class OperatorTile : MonoBehaviour {
 						else if (noteTilesLow[0,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[0][x, y] == false) {
 							noteTilesLow[0,0].color = Color.white;
 							SynthSource_0.GetComponent<Oscillator>().gain = 0;
-
-							stepComplete = false; // <------------- 
 						}												
 
 						if (noteTilesLow[1,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[1][x, y] == true) {
