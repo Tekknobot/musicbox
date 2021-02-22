@@ -171,7 +171,7 @@ public class Oscillator : MonoBehaviour {
         if (legatoButton.GetComponent<Toggle>().isOn == true) {
             if (gameObject.name != "SynthPads") {
                 
-                if (step - noteLength < ms) {
+                if (noteLength < step) {
                     StartCoroutine(MuteNote());   
                 }        
             }
