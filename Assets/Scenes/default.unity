@@ -18091,6 +18091,11 @@ PrefabInstance:
       propertyPath: legatoButton
       value: 
       objectReference: {fileID: 1332462502}
+    - target: {fileID: 2834975157388801047, guid: 8ed4430981b727c41a3cd85fb9e4c014,
+        type: 3}
+      propertyPath: noteLength
+      value: 0.037
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ed4430981b727c41a3cd85fb9e4c014, type: 3}
 --- !u!1001 &4177557291432166122

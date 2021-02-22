@@ -3805,14 +3805,7 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_47.GetComponent<Oscillator>().gain = 0;
 						}
 
-
-
-
-						/////
-
-
-
-																																				
+						/////																						
 						yield return StartCoroutine(Delay());
 
 						hasCoroutineStarted = true;
@@ -3840,7 +3833,6 @@ public class OperatorTile : MonoBehaviour {
 	public IEnumerator Delay() {
 		nextbeatTime += ms;
 		yield return new WaitForSeconds(nextbeatTime - Time.timeSinceLevelLoad);
-		//Debug.Log(nextbeatTime - Time.timeSinceLevelLoad);
 	}
 
 

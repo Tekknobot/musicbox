@@ -56,7 +56,11 @@ public class Oscillator : MonoBehaviour {
 	public float ms;
 	public float nextbeatTime;
 	public float timeSinceLevelLoad;
+    public float step;
 	public GameObject Pad1;
+
+    [Range(0, 0.1171875f)]
+    public float noteLength;
 
     void Start() {
         Pad1 = GameObject.Find("Pad 1");      
@@ -147,6 +151,8 @@ public class Oscillator : MonoBehaviour {
         nextbeatTime = Pad1.GetComponent<OperatorTile>().nextbeatTime;
         timeSinceLevelLoad = Pad1.GetComponent<OperatorTile>().timeSinceLevelLoad;
 
+        step = nextbeatTime - timeSinceLevelLoad;
+
 		if (gameObject.name == "SynthPads") {
 			gameObject.GetComponent<Oscillator>().pitch = GameObject.Find("Pitch").GetComponent<Slider>().value;			
 		}	
@@ -164,7 +170,8 @@ public class Oscillator : MonoBehaviour {
         // legato
         if (legatoButton.GetComponent<Toggle>().isOn == true) {
             if (gameObject.name != "SynthPads") {
-                if (nextbeatTime - timeSinceLevelLoad < ms) {
+                
+                if (step - noteLength > noteLength) {
                     gain = 0;
                 }            
             }
