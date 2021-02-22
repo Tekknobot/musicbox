@@ -170,10 +170,7 @@ public class Oscillator : MonoBehaviour {
         // legato switch
         if (legatoButton.GetComponent<Toggle>().isOn == true) {
             if (gameObject.name != "SynthPads") {
-                
-                if (noteLength < step) {
-                    StartCoroutine(MuteNote());   
-                }        
+                StartCoroutine(MuteNote());         
             }
         }     
         else {
@@ -333,7 +330,7 @@ public class Oscillator : MonoBehaviour {
     }    
 
     IEnumerator MuteNote() {      
-        yield return null;
+        yield return new WaitUntil(() => Pad1.GetComponent<OperatorTile>().stepComplete == true);
         gain = 0f; 
     }      
 }      
