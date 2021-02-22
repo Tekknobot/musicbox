@@ -3825,11 +3825,6 @@ public class OperatorTile : MonoBehaviour {
 		}
 	}
 
-	public void StartWave() {
-		Debug.Log("Active? "+ gameObject.activeInHierarchy);
-		StartCoroutine(TriggerWave());
-	}
-
 	public IEnumerator Delay() {
 		nextbeatTime += ms;
 		yield return new WaitForSeconds(nextbeatTime - Time.timeSinceLevelLoad);

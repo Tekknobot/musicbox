@@ -40,7 +40,10 @@ public class Oscillator : MonoBehaviour {
     [Range(0, 30)]
     public float frequency2;
     [Range(0, 0.1f)]
-    public float gain2;        
+    public float gain2;      
+
+    [Range(0, 5f)]
+    public float noteLength;       
 
     public bool sine;
     public bool square;
@@ -62,7 +65,7 @@ public class Oscillator : MonoBehaviour {
     void Start() {
         Pad1 = GameObject.Find("Pad 1");      
 
-        gain = 0;
+        gain = 0f;
         sine = true;
         low = true;
 
@@ -164,15 +167,13 @@ public class Oscillator : MonoBehaviour {
             octaveThree.Select();         
         }       
 
-        // legato
+        // legato switch
         if (legatoButton.GetComponent<Toggle>().isOn == true) {
             if (gameObject.name != "SynthPads") {
                 
-                // if (step - noteLength > step) {
-                //     gain = 0;
-                // } 
-
-                StartCoroutine(MuteNote());           
+                if (step - noteLength < ms) {
+                    StartCoroutine(MuteNote());   
+                }        
             }
         }     
         else {
@@ -332,7 +333,7 @@ public class Oscillator : MonoBehaviour {
     }    
 
     IEnumerator MuteNote() {      
-        yield return new WaitForSeconds(step);
-        gain = 0; 
+        yield return null;
+        gain = 0f; 
     }      
 }      
