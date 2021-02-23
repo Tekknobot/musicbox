@@ -3006,7 +3006,6 @@ public class OperatorTile : MonoBehaviour {
 			if (!hasCoroutineStarted) {
 				for (int y = 0; y < OperatorManager.instance.ySize; y++) {
 					for (int x = 0; x < OperatorManager.instance.xSize; x++) {
-
 						blockTiles[x,y].color = selectedColor;
 
 						// Play drum samples
@@ -3835,6 +3834,7 @@ public class OperatorTile : MonoBehaviour {
 		nextbeatTime += ms;
 		yield return new WaitForSeconds(nextbeatTime - Time.timeSinceLevelLoad);
 		stepComplete = true;
+		StartCoroutine(StepCompleteTrigger());
 	}
 
 
@@ -3851,5 +3851,10 @@ public class OperatorTile : MonoBehaviour {
 	IEnumerator StopNote() {
 		yield return new WaitForSeconds(ms);
 		SynthSourcePad.GetComponent<Oscillator>().gain = 0;
-	}		
+	}	
+
+	IEnumerator StepCompleteTrigger() {
+		yield return null;
+		stepComplete = false;
+	}			
 }

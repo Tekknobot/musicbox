@@ -177,6 +177,7 @@ public class Oscillator : MonoBehaviour {
             }
         }     
         else {
+            Pad1.GetComponent<OperatorTile>().stepComplete = false;
             return;
         }          
     }
@@ -334,7 +335,8 @@ public class Oscillator : MonoBehaviour {
 
     IEnumerator MuteNote() {      
         yield return new WaitUntil(() => Pad1.GetComponent<OperatorTile>().stepComplete == true);
+        Pad1.GetComponent<OperatorTile>().stepComplete = false;
+        //yield return new WaitForSeconds(nextbeatTime - timeSinceLevelLoad);
         gain = 0f; 
-        //Pad1.GetComponent<OperatorTile>().stepComplete = false;
     }      
 }      
