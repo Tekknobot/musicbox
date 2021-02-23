@@ -42,7 +42,7 @@ public class Oscillator : MonoBehaviour {
     [Range(0, 0.1f)]
     public float gain2;      
 
-    [Range(0, 5f)]
+    [Range(0, 1f)]
     public float noteLength;       
 
     public bool sine;
@@ -150,7 +150,6 @@ public class Oscillator : MonoBehaviour {
         ms = Pad1.GetComponent<OperatorTile>().ms;
         nextbeatTime = Pad1.GetComponent<OperatorTile>().nextbeatTime;
         timeSinceLevelLoad = Pad1.GetComponent<OperatorTile>().timeSinceLevelLoad;
-
         step = nextbeatTime - timeSinceLevelLoad;
 
 		if (gameObject.name == "SynthPads") {
@@ -177,7 +176,6 @@ public class Oscillator : MonoBehaviour {
             }
         }     
         else {
-            Pad1.GetComponent<OperatorTile>().stepComplete = false;
             return;
         }          
     }
@@ -334,9 +332,7 @@ public class Oscillator : MonoBehaviour {
     }    
 
     IEnumerator MuteNote() {      
-        yield return new WaitUntil(() => Pad1.GetComponent<OperatorTile>().stepComplete == true);
-        Pad1.GetComponent<OperatorTile>().stepComplete = false;
-        //yield return new WaitForSeconds(nextbeatTime - timeSinceLevelLoad);
-        gain = 0f; 
+        yield return new WaitForSeconds(noteLength);
+        gain = 0f;
     }      
 }      

@@ -404,7 +404,7 @@ public class OperatorTile : MonoBehaviour {
 
 		if (GameObject.Find ("Pitch")) {
 			pitchValue = GameObject.Find ("Pitch").GetComponent<Slider>().value;		
-		}			
+		}	
 	}
 
 	private void Select() {
@@ -3007,7 +3007,8 @@ public class OperatorTile : MonoBehaviour {
 				for (int y = 0; y < OperatorManager.instance.ySize; y++) {
 					for (int x = 0; x < OperatorManager.instance.xSize; x++) {
 						blockTiles[x,y].color = selectedColor;
-
+						stepComplete = false;
+						
 						// Play drum samples
 						if (padTiles[0,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[0][x, y] == true) {
 							sampleClip = samples[0];
@@ -3813,12 +3814,11 @@ public class OperatorTile : MonoBehaviour {
 						yield return StartCoroutine(Delay());
 
 						hasCoroutineStarted = true;
-						UnTriggerWave();
+						UnTriggerWave();	
 					}
 				}
 			}
 			hasCoroutineStarted = false;
-
 		}
 	}
 
@@ -3834,7 +3834,6 @@ public class OperatorTile : MonoBehaviour {
 		nextbeatTime += ms;
 		yield return new WaitForSeconds(nextbeatTime - Time.timeSinceLevelLoad);
 		stepComplete = true;
-		StartCoroutine(StepCompleteTrigger());
 	}
 
 
@@ -3851,10 +3850,5 @@ public class OperatorTile : MonoBehaviour {
 	IEnumerator StopNote() {
 		yield return new WaitForSeconds(ms);
 		SynthSourcePad.GetComponent<Oscillator>().gain = 0;
-	}	
-
-	IEnumerator StepCompleteTrigger() {
-		yield return null;
-		stepComplete = false;
-	}			
+	}		
 }
