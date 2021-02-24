@@ -62,6 +62,8 @@ public class Oscillator : MonoBehaviour {
     public float step;
 	public GameObject Pad1;
 
+    bool hasCoroutineStarted = false;
+
     void Start() {
         Pad1 = GameObject.Find("Pad 1");      
 
@@ -80,7 +82,6 @@ public class Oscillator : MonoBehaviour {
 		triangleWave.onClick.AddListener(TriangleOnClick); 
 
         ////
-
 
         ColorBlock colors = sineWave.colors;
         colors.normalColor = new Color32(200, 200, 200, 255);
@@ -166,16 +167,18 @@ public class Oscillator : MonoBehaviour {
             octaveThree.Select();         
         } 
 
-        LegatoSwitch(); 
+        if (legatoButton.GetComponent<Toggle>().isOn == true) {
+            LegatoSwitch(); 
+        }    
     }
 
-    void LegatoSwitch() {
-        if (legatoButton.GetComponent<Toggle>().isOn == true) {
-            if (gameObject.name != "SynthPads") {
-                StartCoroutine(MuteNote());         
-            }
+    public void LegatoSwitch() {
+        if (gameObject.name != "SynthPads" && hasCoroutineStarted == false) {
+            StartCoroutine(MuteNote()); 
+            hasCoroutineStarted = true;        
         }     
         else {
+            hasCoroutineStarted = false;
             return;
         }          
     }
@@ -259,11 +262,7 @@ public class Oscillator : MonoBehaviour {
         ColorBlock colorsTriangle = triangleWave.colors;
         colorsTriangle.normalColor = new Color32(200, 200, 200, 255);
         triangleWave.colors = colorsTriangle;  
-	}  
-
-	void LegatoOnClick(){   
-        legatoActive = true;
-	}      
+	}    
 
     void OnAudioFilterRead(float[] data, int channels) {
         increment = (frequency * 2.0 * Mathf.PI / sampling_frequency);
@@ -331,7 +330,9 @@ public class Oscillator : MonoBehaviour {
         NoteManagerHigh.SetActive(false); 
     }    
 
-    IEnumerator MuteNote() {      
+    IEnumerator MuteNote() { 
+        // yield return new WaitUntil(() => Pad1.GetComponent<OperatorTile>().stepComplete == true);   
+        // Pad1.GetComponent<OperatorTile>().stepComplete = false;  
         yield return new WaitForSeconds(noteLength);
         gain = 0f;
     }      
