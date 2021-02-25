@@ -20191,7 +20191,7 @@ PrefabInstance:
     - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
         type: 3}
       propertyPath: noteLength
-      value: 1
+      value: 0.1072
       objectReference: {fileID: 0}
     - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
         type: 3}

@@ -204,7 +204,7 @@ public class OperatorTile : MonoBehaviour {
 
 	private float pitchValue = 1f;
 
-	public bool stepComplete = false;
+	public bool cycleComplete = false;
 
 	Dictionary<string, int> spriteClip = new Dictionary<string, int>() {
 		{ "blue 0", 0 },
@@ -2022,7 +2022,7 @@ public class OperatorTile : MonoBehaviour {
 				if (OperatorManager.instance.noteMid[13][x, y] == true && render.sprite.name == "note 29") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = Note_29;
 				}
-				else if (OperatorManager.instance.noteMid[13][x, y] == false && render.sprite.name == "note 39") {
+				else if (OperatorManager.instance.noteMid[13][x, y] == false && render.sprite.name == "note 29") {
 					OperatorManager.instance.tiles[x, y].GetComponent<SpriteRenderer>().sprite = block;
 				}	
 
@@ -3007,7 +3007,6 @@ public class OperatorTile : MonoBehaviour {
 				for (int y = 0; y < OperatorManager.instance.ySize; y++) {
 					for (int x = 0; x < OperatorManager.instance.xSize; x++) {
 						blockTiles[x,y].color = selectedColor;
-						stepComplete = false;
 						
 						// Play drum samples
 						if (padTiles[0,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[0][x, y] == true) {
@@ -3833,7 +3832,7 @@ public class OperatorTile : MonoBehaviour {
 	public IEnumerator Delay() {
 		nextbeatTime += ms;
 		yield return new WaitForSeconds(nextbeatTime - Time.timeSinceLevelLoad);
-		stepComplete = true;
+		cycleComplete = false;
 	}
 
 

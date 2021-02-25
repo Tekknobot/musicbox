@@ -42,7 +42,7 @@ public class Oscillator : MonoBehaviour {
     [Range(0, 0.1f)]
     public float gain2;      
 
-    [Range(0, 1f)]
+    [Range(0, 0.1171875f)] // <---- set to 128bpm for testing
     public float noteLength;       
 
     public bool sine;
@@ -169,18 +169,16 @@ public class Oscillator : MonoBehaviour {
 
         if (legatoButton.GetComponent<Toggle>().isOn == true) {
             LegatoSwitch(); 
-        }    
+        }  
+        else {
+            return;
+        }  
     }
 
     public void LegatoSwitch() {
         if (gameObject.name != "SynthPads" && hasCoroutineStarted == false) {
-            StartCoroutine(MuteNote()); 
-            hasCoroutineStarted = true;        
-        }     
-        else {
-            hasCoroutineStarted = false;
-            return;
-        }          
+            StartCoroutine(MuteNote());         
+        }            
     }
 
 	void OctaveOneOnClick(){      
@@ -331,9 +329,10 @@ public class Oscillator : MonoBehaviour {
     }    
 
     IEnumerator MuteNote() { 
-        // yield return new WaitUntil(() => Pad1.GetComponent<OperatorTile>().stepComplete == true);   
-        // Pad1.GetComponent<OperatorTile>().stepComplete = false;  
-        yield return new WaitForSeconds(noteLength);
+        hasCoroutineStarted = true; 
+        //yield return new WaitUntil(() => Pad1.GetComponent<OperatorTile>().cycleComplete == false);
+        yield return new WaitForSeconds(ms - 0.01f);
         gain = 0f;
-    }      
+        hasCoroutineStarted = false;
+    }    
 }      
