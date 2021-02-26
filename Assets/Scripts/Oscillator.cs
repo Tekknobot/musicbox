@@ -62,8 +62,7 @@ public class Oscillator : MonoBehaviour {
     public float step;
 	public GameObject Pad1;
 
-    public int marker = 0;
-
+    public int marker;
     bool hasCoroutineStarted = false;
 
     void Start() {
@@ -173,14 +172,13 @@ public class Oscillator : MonoBehaviour {
             LegatoSwitch(); 
         }  
         else {
-            //marker = 0;
+            hasCoroutineStarted = false;
             return;
         }  
     }
 
     public void LegatoSwitch() {
-        if (gameObject.name != "SynthPads" && hasCoroutineStarted == false && Pad1.GetComponent<OperatorTile>().stepCount == marker) {
-            Debug.Log("mute step start");
+        if (gameObject.name != "SynthPads" && hasCoroutineStarted == false) {
             StartCoroutine(MuteNote());         
         }            
     }
@@ -334,14 +332,14 @@ public class Oscillator : MonoBehaviour {
 
     IEnumerator MuteNote() { 
         hasCoroutineStarted = true; 
-        marker = 1;
-        for (int x = 0; x < 63; x++) {
-            while (Pad1.GetComponent<OperatorTile>().stepCount == x) {
-                yield return new WaitForSeconds(ms - 0.01f);
-                gain = 0f;
-            }
+        while(legatoButton.GetComponent<Toggle>().isOn == true)
+        for (int y = 0; y < OperatorManager.instance.ySize; y++) {
+            for (int x = 0; x < OperatorManager.instance.xSize; x++) {
+                if (Pad1.GetComponent<OperatorTile>().stepCount == y * 8 + x) {
+                    yield return new WaitForSeconds(ms - 0.01f);
+                    gain = 0f;
+                }
+            }    
         }                  
-        hasCoroutineStarted = false; 
-        marker = 0;
     }    
 }      
