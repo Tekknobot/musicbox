@@ -173,7 +173,7 @@ public class Oscillator : MonoBehaviour {
             LegatoSwitch(); 
         }  
         else {
-            marker = 0;
+            //marker = 0;
             return;
         }  
     }
@@ -336,11 +336,12 @@ public class Oscillator : MonoBehaviour {
         hasCoroutineStarted = true; 
         marker = 1;
         for (int x = 0; x < 63; x++) {
-            if (Pad1.GetComponent<OperatorTile>().stepCount == x) {
+            while (Pad1.GetComponent<OperatorTile>().stepCount == x) {
                 yield return new WaitForSeconds(ms - 0.01f);
                 gain = 0f;
             }
         }                  
         hasCoroutineStarted = false; 
+        marker = 0;
     }    
 }      
