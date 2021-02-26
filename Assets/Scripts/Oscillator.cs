@@ -169,7 +169,7 @@ public class Oscillator : MonoBehaviour {
         } 
 
         if (legatoButton.GetComponent<Toggle>().isOn == true) {
-            LegatoSwitch(); 
+            //LegatoSwitch(); 
         }  
         else {
             hasCoroutineStarted = false;
@@ -178,7 +178,7 @@ public class Oscillator : MonoBehaviour {
     }
 
     public void LegatoSwitch() {
-        if (gameObject.name != "SynthPads" && hasCoroutineStarted == false) {
+        if (gameObject.name != "SynthPads" && hasCoroutineStarted == false && Pad1.GetComponent<OperatorTile>().stepCount == 0) {
             StartCoroutine(MuteNote());         
         }            
     }
@@ -340,6 +340,7 @@ public class Oscillator : MonoBehaviour {
                     gain = 0f;
                 }
             }    
-        }                  
+        }
+        hasCoroutineStarted = true;                  
     }    
 }      

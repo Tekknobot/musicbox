@@ -205,7 +205,7 @@ public class OperatorTile : MonoBehaviour {
 	private float pitchValue = 1f;
 
 	public int stepCount;
-	public bool triggerMute;
+	public GameObject legatoButton;
 
 	Dictionary<string, int> spriteClip = new Dictionary<string, int>() {
 		{ "blue 0", 0 },
@@ -251,6 +251,8 @@ public class OperatorTile : MonoBehaviour {
 		audioSourceOnTile = gameObject.GetComponent<AudioSource>();
 
 		bpm = GameObject.Find("Slider").GetComponent<Slider>().value;
+
+		legatoButton = GameObject.Find("Legato");
 
 		SynthSource_0 = GameObject.Find("C3");
 		SynthSource_1 = GameObject.Find("C#3");
@@ -3811,7 +3813,58 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_47.GetComponent<Oscillator>().gain = 0;
 						}
 
-						/////	
+						//MuteSynth
+						if (legatoButton.GetComponent<Toggle>().isOn == true) {
+							yield return new WaitForSeconds(ms - 0.01f);
+                    		SynthSource_0.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_1.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_2.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_3.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_4.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_5.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_6.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_7.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_8.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_9.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_10.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_11.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_12.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_13.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_14.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_15.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_16.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_17.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_18.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_19.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_20.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_21.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_22.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_23.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_24.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_25.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_26.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_27.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_28.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_29.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_30.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_31.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_32.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_33.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_34.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_35.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_36.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_37.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_38.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_39.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_40.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_41.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_42.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_43.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_44.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_45.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_46.GetComponent<Oscillator>().gain = 0f;
+							SynthSource_47.GetComponent<Oscillator>().gain = 0f;
+						}						
 																											
 						yield return StartCoroutine(Delay());
 
