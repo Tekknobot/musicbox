@@ -204,7 +204,8 @@ public class OperatorTile : MonoBehaviour {
 
 	private float pitchValue = 1f;
 
-	public bool cycleComplete = false;
+	public int stepCount;
+	public bool triggerMute;
 
 	Dictionary<string, int> spriteClip = new Dictionary<string, int>() {
 		{ "blue 0", 0 },
@@ -3007,7 +3008,9 @@ public class OperatorTile : MonoBehaviour {
 				for (int y = 0; y < OperatorManager.instance.ySize; y++) {
 					for (int x = 0; x < OperatorManager.instance.xSize; x++) {
 						blockTiles[x,y].color = selectedColor;
-						
+
+						stepCount = y * 8 + x;
+
 						// Play drum samples
 						if (padTiles[0,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.boards[0][x, y] == true) {
 							sampleClip = samples[0];
@@ -3832,7 +3835,6 @@ public class OperatorTile : MonoBehaviour {
 	public IEnumerator Delay() {
 		nextbeatTime += ms;
 		yield return new WaitForSeconds(nextbeatTime - Time.timeSinceLevelLoad);
-		cycleComplete = false;
 	}
 
 
