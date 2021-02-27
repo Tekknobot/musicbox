@@ -3815,7 +3815,7 @@ public class OperatorTile : MonoBehaviour {
 
 						//MuteSynth
 						if (legatoButton.GetComponent<Toggle>().isOn == true) {
-							yield return new WaitForSeconds(ms - 0.01f);
+							yield return new WaitForSeconds(nextbeatTime - Time.timeSinceLevelLoad + ms - 0.01f);
                     		SynthSource_0.GetComponent<Oscillator>().gain = 0f;
 							SynthSource_1.GetComponent<Oscillator>().gain = 0f;
 							SynthSource_2.GetComponent<Oscillator>().gain = 0f;

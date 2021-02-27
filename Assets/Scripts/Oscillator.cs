@@ -27,23 +27,12 @@ public class Oscillator : MonoBehaviour {
     
     public bool legatoActive = false;
 
-    public int octaveDownInt = -12;
-    public int octaveUpInt = 12;
-
     public GameObject NoteManagerLow;
     public GameObject NoteManagerMid;
     public GameObject NoteManagerHigh;    
 
     [Range(1, 10)]
-    public float pitch;  
-
-    [Range(0, 30)]
-    public float frequency2;
-    [Range(0, 0.1f)]
-    public float gain2;      
-
-    [Range(0, 0.1171875f)] // <---- set to 128bpm for testing
-    public float noteLength;       
+    public float pitch;       
 
     public bool sine;
     public bool square;
