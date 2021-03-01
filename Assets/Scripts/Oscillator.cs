@@ -297,10 +297,8 @@ public class Oscillator : MonoBehaviour {
                 phase += increment;
 
                 //triangle
-                data[i] = (float)(gain * (phase < gain2 ? Mathf.Lerp(-1, 1, Mathf.InverseLerp(0, gain2, (float)phase)) :
-                            Mathf.Lerp(1, -1, Mathf.InverseLerp(gain2, 1, (float)phase))));
-
-                // data[i] = (float)(gain * (double)Mathf.PingPong((float)phase, 1.0f));
+                data[i] = (float)(gain * (phase < gain2 ? Mathf.Lerp(-1, 1, Mathf.InverseLerp(0, gain2, (float)phase)) : Mathf.Lerp(1, -1, Mathf.InverseLerp(gain2, 1, (float)phase))));
+                //data[i] = (float)(gain * (double)Mathf.PingPong((float)phase, 1.0f));
 
                 if (channels == 2) {
                     data[i + 1] = data[i];
