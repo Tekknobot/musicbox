@@ -27,16 +27,14 @@ public class Oscillator : MonoBehaviour {
     public GameObject NoteManagerMid;
     public GameObject NoteManagerHigh;    
 
-    [Range(1, 5)]
-    public float pitch;   
-    [Range(0, 30)]
-    public float frequency2;   
+    [Range(1, 10)]
+    public float pitch;      
     [Range(0.1f, 1)]
-    public float gain2;     
-    [Range(0, 30)]
-    public float frequency3;   
-    [Range(0.1f, 1)]
-    public float gain3;           
+    public float gain2;   
+    [Range(0f, 1)]
+    public float wetMix;      
+    [Range(10, 500)]
+    public float delay;           
 
     public bool sine;
     public bool square;
@@ -156,12 +154,9 @@ public class Oscillator : MonoBehaviour {
 		if (gameObject.name == "Oscillator1") {
             Oscillator1.GetComponent<Oscillator>().gain2 = GameObject.Find("Gain2").GetComponent<Slider>().value;
             Oscillator1.GetComponent<Oscillator>().pitch = GameObject.Find("Pitch").GetComponent<Slider>().value;
-		}      
-
-		if (gameObject.name == "Oscillator2") {
-            Oscillator2.GetComponent<Oscillator>().frequency = GameObject.Find("Frequency3").GetComponent<Slider>().value;
-            Oscillator2.GetComponent<Oscillator>().gain2 = GameObject.Find("Gain3").GetComponent<Slider>().value;
-		}          
+            Oscillator1.GetComponent<AudioEchoFilter>().delay = GameObject.Find("Delay").GetComponent<Slider>().value;
+            Oscillator1.GetComponent<AudioEchoFilter>().wetMix = GameObject.Find("WetMix").GetComponent<Slider>().value;
+		}         
 
         if (low == true) { 
             octaveOne.Select(); 
@@ -256,7 +251,7 @@ public class Oscillator : MonoBehaviour {
 	}    
 
     void OnAudioFilterRead(float[] data, int channels) {
-        increment = ((frequency * pitch) * 2.0 * Mathf.PI / sampling_frequency);
+        increment = ((frequency) * 2.0 * Mathf.PI / sampling_frequency);
         
         if (sine == true) { 
             for (int i = 0; i < data.Length; i += channels) {
@@ -281,10 +276,10 @@ public class Oscillator : MonoBehaviour {
 
                 //sqaure
                 if (gain * Mathf.Sin((float)phase) >= 0 * gain) {
-                    data[i] = (float)gain;
+                    data[i] = (float)gain * 0.6f;
                 }
                 else {
-                    data[i] = (-(float)gain);
+                    data[i] = (-(float)gain * 0.6f);
                 }
 
                 if (channels == 2) {

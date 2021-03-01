@@ -206,10 +206,9 @@ public class OperatorTile : MonoBehaviour {
 	public GameObject[] SynthVols;
 	public GameObject[] gain2s;
 
-	private float frequency2;
 	private float gain2;
-	private float frequency3;
-	private float gain3;
+	private float delay;
+	private float wetMix;
 	private float pitch;
 
 
@@ -424,12 +423,12 @@ public class OperatorTile : MonoBehaviour {
 			gain2 = GameObject.Find ("Gain2").GetComponent<Slider>().value;		
 		}
 
-		if (GameObject.Find ("Frequency3")) {
-			frequency3 = Oscillator2.GetComponent<Oscillator>().frequency3;			
+		if (GameObject.Find ("Delay")) {
+			delay = Oscillator1.GetComponent<AudioEchoFilter>().delay;			
 		}	
 
-		if (GameObject.Find ("Gain3")) {
-			gain3 = Oscillator2.GetComponent<Oscillator>().gain3;		
+		if (GameObject.Find ("WetMix")) {
+			wetMix = Oscillator1.GetComponent<AudioEchoFilter>().wetMix;		
 		}
 	}
 
@@ -3255,6 +3254,8 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_0.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_0.GetComponent<Oscillator>().gain2 = gain2;
 							SynthSource_0.GetComponent<Oscillator>().frequency = SynthSource_0.GetComponent<Oscillator>().frequencies[0];
+							SynthSource_0.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_0.GetComponent<AudioEchoFilter>().wetMix = wetMix;
 							noteTilesLow[0,0].color = selectedColor;
 						}
 						else if (noteTilesLow[0,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[0][x, y] == false) {
@@ -3266,7 +3267,9 @@ public class OperatorTile : MonoBehaviour {
                             SynthSource_1.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_1.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_1.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_1.GetComponent<Oscillator>().frequency = SynthSource_1.GetComponent<Oscillator>().frequencies[1];	
+							SynthSource_1.GetComponent<Oscillator>().frequency = SynthSource_1.GetComponent<Oscillator>().frequencies[1];
+							SynthSource_1.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_1.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesLow[1,0].color = selectedColor;
 						}
 						else if (noteTilesLow[1,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[1][x, y] == false) {
@@ -3279,6 +3282,8 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_2.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_2.GetComponent<Oscillator>().gain2 = gain2;
 							SynthSource_2.GetComponent<Oscillator>().frequency = SynthSource_2.GetComponent<Oscillator>().frequencies[2];
+							SynthSource_2.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_2.GetComponent<AudioEchoFilter>().wetMix = wetMix;
 							noteTilesLow[2,0].color = selectedColor;
 						}
 						else if (noteTilesLow[2,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[2][x, y] == false) {
@@ -3291,6 +3296,8 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_3.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_3.GetComponent<Oscillator>().gain2 = gain2;
 							SynthSource_3.GetComponent<Oscillator>().frequency = SynthSource_3.GetComponent<Oscillator>().frequencies[3];	
+							SynthSource_3.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_3.GetComponent<AudioEchoFilter>().wetMix = wetMix;
 							noteTilesLow[3,0].color = selectedColor;
 						}
 						else if (noteTilesLow[3,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[3][x, y] == false) {
@@ -3302,7 +3309,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_4.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_4.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_4.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_4.GetComponent<Oscillator>().frequency = SynthSource_4.GetComponent<Oscillator>().frequencies[4];	
+							SynthSource_4.GetComponent<Oscillator>().frequency = SynthSource_4.GetComponent<Oscillator>().frequencies[4];
+							SynthSource_4.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_4.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesLow[4,0].color = selectedColor;
 						}
 						else if (noteTilesLow[4,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[4][x, y] == false) {
@@ -3315,6 +3324,8 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_5.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_5.GetComponent<Oscillator>().gain2 = gain2;
 							SynthSource_5.GetComponent<Oscillator>().frequency = SynthSource_5.GetComponent<Oscillator>().frequencies[5];
+							SynthSource_5.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_5.GetComponent<AudioEchoFilter>().wetMix = wetMix;
 							noteTilesLow[5,0].color = selectedColor;
 						}
 						else if (noteTilesLow[5,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[5][x, y] == false) {
@@ -3326,7 +3337,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_6.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_6.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_6.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_6.GetComponent<Oscillator>().frequency = SynthSource_6.GetComponent<Oscillator>().frequencies[6];	
+							SynthSource_6.GetComponent<Oscillator>().frequency = SynthSource_6.GetComponent<Oscillator>().frequencies[6];
+							SynthSource_6.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_6.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesLow[6,0].color = selectedColor;
 						}
 						else if (noteTilesLow[6,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[6][x, y] == false) {
@@ -3339,6 +3352,8 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_7.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_7.GetComponent<Oscillator>().gain2 = gain2;
 							SynthSource_7.GetComponent<Oscillator>().frequency = SynthSource_7.GetComponent<Oscillator>().frequencies[7];	
+							SynthSource_7.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_7.GetComponent<AudioEchoFilter>().wetMix = wetMix;
 							noteTilesLow[7,0].color = selectedColor;
 						}
 						else if (noteTilesLow[7,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[7][x, y] == false) {
@@ -3350,7 +3365,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_8.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_8.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_8.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_8.GetComponent<Oscillator>().frequency = SynthSource_8.GetComponent<Oscillator>().frequencies[8];	
+							SynthSource_8.GetComponent<Oscillator>().frequency = SynthSource_8.GetComponent<Oscillator>().frequencies[8];
+							SynthSource_8.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_8.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesLow[0,1].color = selectedColor;
 						}
 						else if (noteTilesLow[0,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[8][x, y] == false) {
@@ -3362,7 +3379,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_9.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_9.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_9.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_9.GetComponent<Oscillator>().frequency = SynthSource_9.GetComponent<Oscillator>().frequencies[9];	
+							SynthSource_9.GetComponent<Oscillator>().frequency = SynthSource_9.GetComponent<Oscillator>().frequencies[9];
+							SynthSource_9.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_9.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesLow[1,1].color = selectedColor;
 						}
 						else if (noteTilesLow[1,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[9][x, y] == false) {
@@ -3374,7 +3393,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_10.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_10.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_10.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_10.GetComponent<Oscillator>().frequency = SynthSource_10.GetComponent<Oscillator>().frequencies[10];	
+							SynthSource_10.GetComponent<Oscillator>().frequency = SynthSource_10.GetComponent<Oscillator>().frequencies[10];
+							SynthSource_10.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_10.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesLow[2,1].color = selectedColor;
 						}
 						else if (noteTilesLow[2,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[10][x, y] == false) {
@@ -3387,6 +3408,8 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_11.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_11.GetComponent<Oscillator>().gain2 = gain2;
 							SynthSource_11.GetComponent<Oscillator>().frequency = SynthSource_11.GetComponent<Oscillator>().frequencies[11];	
+							SynthSource_11.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_11.GetComponent<AudioEchoFilter>().wetMix = wetMix;
 							noteTilesLow[3,1].color = selectedColor;
 						}
 						else if (noteTilesLow[3,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[11][x, y] == false) {
@@ -3398,7 +3421,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_12.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_12.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_12.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_12.GetComponent<Oscillator>().frequency = SynthSource_12.GetComponent<Oscillator>().frequencies[12];	
+							SynthSource_12.GetComponent<Oscillator>().frequency = SynthSource_12.GetComponent<Oscillator>().frequencies[12];
+							SynthSource_12.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_12.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesLow[4,1].color = selectedColor;
 						}
 						else if (noteTilesLow[4,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[12][x, y] == false) {
@@ -3410,7 +3435,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_13.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_13.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_13.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_13.GetComponent<Oscillator>().frequency = SynthSource_13.GetComponent<Oscillator>().frequencies[13];	
+							SynthSource_13.GetComponent<Oscillator>().frequency = SynthSource_13.GetComponent<Oscillator>().frequencies[13];
+							SynthSource_13.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_13.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesLow[5,1].color = selectedColor;
 						}
 						else if (noteTilesLow[5,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[13][x, y] == false) {
@@ -3422,7 +3449,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_14.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_14.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_14.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_14.GetComponent<Oscillator>().frequency = SynthSource_14.GetComponent<Oscillator>().frequencies[14];	
+							SynthSource_14.GetComponent<Oscillator>().frequency = SynthSource_14.GetComponent<Oscillator>().frequencies[14];
+							SynthSource_14.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_14.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesLow[6,1].color = selectedColor;
 						}
 						else if (noteTilesLow[6,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[14][x, y] == false) {
@@ -3435,6 +3464,8 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_15.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_15.GetComponent<Oscillator>().gain2 = gain2;
 							SynthSource_15.GetComponent<Oscillator>().frequency = SynthSource_15.GetComponent<Oscillator>().frequencies[15];	
+							SynthSource_15.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_15.GetComponent<AudioEchoFilter>().wetMix = wetMix;
 							noteTilesLow[7,1].color = selectedColor;
 						}
 						else if (noteTilesLow[7,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteLow[15][x, y] == false) {
@@ -3451,7 +3482,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_16.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_16.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_16.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_16.GetComponent<Oscillator>().frequency = SynthSource_16.GetComponent<Oscillator>().frequencies[16];	
+							SynthSource_16.GetComponent<Oscillator>().frequency = SynthSource_16.GetComponent<Oscillator>().frequencies[16];
+							SynthSource_16.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_16.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesMid[0,0].color = selectedColor;
 						}
 						else if (noteTilesMid[0,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteMid[0][x, y] == false) {
@@ -3463,7 +3496,9 @@ public class OperatorTile : MonoBehaviour {
                             SynthSource_17.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_17.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_17.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_17.GetComponent<Oscillator>().frequency = SynthSource_17.GetComponent<Oscillator>().frequencies[17];	
+							SynthSource_17.GetComponent<Oscillator>().frequency = SynthSource_17.GetComponent<Oscillator>().frequencies[17];
+							SynthSource_17.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_17.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesMid[1,0].color = selectedColor;
 						}
 						else if (noteTilesMid[1,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteMid[1][x, y] == false) {
@@ -3476,6 +3511,8 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_18.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_18.GetComponent<Oscillator>().gain2 = gain2;
 							SynthSource_18.GetComponent<Oscillator>().frequency = SynthSource_18.GetComponent<Oscillator>().frequencies[18];
+							SynthSource_18.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_18.GetComponent<AudioEchoFilter>().wetMix = wetMix;
 							noteTilesMid[2,0].color = selectedColor;
 						}
 						else if (noteTilesMid[2,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteMid[2][x, y] == false) {
@@ -3487,7 +3524,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_19.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_19.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_19.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_19.GetComponent<Oscillator>().frequency = SynthSource_19.GetComponent<Oscillator>().frequencies[19];	
+							SynthSource_19.GetComponent<Oscillator>().frequency = SynthSource_19.GetComponent<Oscillator>().frequencies[19];
+							SynthSource_19.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_19.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesMid[3,0].color = selectedColor;
 						}
 						else if (noteTilesMid[3,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteMid[3][x, y] == false) {
@@ -3499,7 +3538,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_20.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_20.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_20.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_20.GetComponent<Oscillator>().frequency = SynthSource_20.GetComponent<Oscillator>().frequencies[20];	
+							SynthSource_20.GetComponent<Oscillator>().frequency = SynthSource_20.GetComponent<Oscillator>().frequencies[20];
+							SynthSource_20.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_20.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesMid[4,0].color = selectedColor;
 						}
 						else if (noteTilesMid[4,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteMid[4][x, y] == false) {
@@ -3512,6 +3553,8 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_21.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_21.GetComponent<Oscillator>().gain2 = gain2;
 							SynthSource_21.GetComponent<Oscillator>().frequency = SynthSource_21.GetComponent<Oscillator>().frequencies[21];
+							SynthSource_21.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_21.GetComponent<AudioEchoFilter>().wetMix = wetMix;
 							noteTilesMid[5,0].color = selectedColor;
 						}
 						else if (noteTilesMid[5,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteMid[5][x, y] == false) {
@@ -3523,7 +3566,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_22.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_22.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_22.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_22.GetComponent<Oscillator>().frequency = SynthSource_22.GetComponent<Oscillator>().frequencies[22];	
+							SynthSource_22.GetComponent<Oscillator>().frequency = SynthSource_22.GetComponent<Oscillator>().frequencies[22];
+							SynthSource_22.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_22.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesMid[6,0].color = selectedColor;
 						}
 						else if (noteTilesMid[6,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteMid[6][x, y] == false) {
@@ -3535,7 +3580,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_23.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_23.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_23.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_23.GetComponent<Oscillator>().frequency = SynthSource_23.GetComponent<Oscillator>().frequencies[23];	
+							SynthSource_23.GetComponent<Oscillator>().frequency = SynthSource_23.GetComponent<Oscillator>().frequencies[23];
+							SynthSource_23.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_23.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesMid[7,0].color = selectedColor;
 						}
 						else if (noteTilesMid[7,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteMid[7][x, y] == false) {
@@ -3547,7 +3594,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_24.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_24.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_24.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_24.GetComponent<Oscillator>().frequency = SynthSource_24.GetComponent<Oscillator>().frequencies[24];	
+							SynthSource_24.GetComponent<Oscillator>().frequency = SynthSource_24.GetComponent<Oscillator>().frequencies[24];
+							SynthSource_24.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_24.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesMid[0,1].color = selectedColor;
 						}
 						else if (noteTilesMid[0,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteMid[8][x, y] == false) {
@@ -3559,7 +3608,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_25.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_25.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_25.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_25.GetComponent<Oscillator>().frequency = SynthSource_25.GetComponent<Oscillator>().frequencies[25];	
+							SynthSource_25.GetComponent<Oscillator>().frequency = SynthSource_25.GetComponent<Oscillator>().frequencies[25];
+							SynthSource_25.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_25.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesMid[1,1].color = selectedColor;
 						}
 						else if (noteTilesMid[1,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteMid[9][x, y] == false) {
@@ -3571,7 +3622,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_26.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_26.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_26.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_26.GetComponent<Oscillator>().frequency = SynthSource_26.GetComponent<Oscillator>().frequencies[26];	
+							SynthSource_26.GetComponent<Oscillator>().frequency = SynthSource_26.GetComponent<Oscillator>().frequencies[26];
+							SynthSource_26.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_26.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesMid[2,1].color = selectedColor;
 						}
 						else if (noteTilesMid[2,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteMid[10][x, y] == false) {
@@ -3583,7 +3636,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_27.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_27.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_27.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_27.GetComponent<Oscillator>().frequency = SynthSource_27.GetComponent<Oscillator>().frequencies[27];	
+							SynthSource_27.GetComponent<Oscillator>().frequency = SynthSource_27.GetComponent<Oscillator>().frequencies[27];
+							SynthSource_27.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_27.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesMid[3,1].color = selectedColor;
 						}
 						else if (noteTilesMid[3,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteMid[11][x, y] == false) {
@@ -3595,7 +3650,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_28.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_28.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_28.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_28.GetComponent<Oscillator>().frequency = SynthSource_28.GetComponent<Oscillator>().frequencies[28];	
+							SynthSource_28.GetComponent<Oscillator>().frequency = SynthSource_28.GetComponent<Oscillator>().frequencies[28];
+							SynthSource_28.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_28.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesMid[4,1].color = selectedColor;
 						}
 						else if (noteTilesMid[4,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteMid[12][x, y] == false) {
@@ -3608,6 +3665,8 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_29.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_29.GetComponent<Oscillator>().gain2 = gain2;
 							SynthSource_29.GetComponent<Oscillator>().frequency = SynthSource_29.GetComponent<Oscillator>().frequencies[29];	
+							SynthSource_29.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_29.GetComponent<AudioEchoFilter>().wetMix = wetMix;
 							noteTilesMid[5,1].color = selectedColor;
 						}
 						else if (noteTilesMid[5,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteMid[13][x, y] == false) {
@@ -3619,7 +3678,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_30.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_30.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_30.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_30.GetComponent<Oscillator>().frequency = SynthSource_30.GetComponent<Oscillator>().frequencies[30];	
+							SynthSource_30.GetComponent<Oscillator>().frequency = SynthSource_30.GetComponent<Oscillator>().frequencies[30];
+							SynthSource_30.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_30.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesMid[6,1].color = selectedColor;
 						}
 						else if (noteTilesMid[6,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteMid[14][x, y] == false) {
@@ -3631,7 +3692,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_31.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_31.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_31.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_31.GetComponent<Oscillator>().frequency = SynthSource_31.GetComponent<Oscillator>().frequencies[31];	
+							SynthSource_31.GetComponent<Oscillator>().frequency = SynthSource_31.GetComponent<Oscillator>().frequencies[31];
+							SynthSource_31.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_31.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesMid[7,1].color = selectedColor;
 						}
 						else if (noteTilesMid[7,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteMid[15][x, y] == false) {
@@ -3648,7 +3711,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_32.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_32.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_32.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_32.GetComponent<Oscillator>().frequency = SynthSource_32.GetComponent<Oscillator>().frequencies[32];	
+							SynthSource_32.GetComponent<Oscillator>().frequency = SynthSource_32.GetComponent<Oscillator>().frequencies[32];
+							SynthSource_32.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_32.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesHigh[0,0].color = selectedColor;
 						}
 						else if (noteTilesHigh[0,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteHigh[0][x, y] == false) {
@@ -3660,7 +3725,9 @@ public class OperatorTile : MonoBehaviour {
                             SynthSource_33.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_33.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_33.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_33.GetComponent<Oscillator>().frequency = SynthSource_33.GetComponent<Oscillator>().frequencies[33];	
+							SynthSource_33.GetComponent<Oscillator>().frequency = SynthSource_33.GetComponent<Oscillator>().frequencies[33];
+							SynthSource_33.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_33.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesHigh[1,0].color = selectedColor;
 						}
 						else if (noteTilesHigh[1,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteHigh[1][x, y] == false) {
@@ -3673,6 +3740,8 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_34.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_34.GetComponent<Oscillator>().gain2 = gain2;
 							SynthSource_34.GetComponent<Oscillator>().frequency = SynthSource_34.GetComponent<Oscillator>().frequencies[34];
+							SynthSource_34.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_34.GetComponent<AudioEchoFilter>().wetMix = wetMix;
 							noteTilesHigh[2,0].color = selectedColor;
 						}
 						else if (noteTilesHigh[2,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteHigh[2][x, y] == false) {
@@ -3684,7 +3753,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_35.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_35.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_35.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_35.GetComponent<Oscillator>().frequency = SynthSource_35.GetComponent<Oscillator>().frequencies[35];	
+							SynthSource_35.GetComponent<Oscillator>().frequency = SynthSource_35.GetComponent<Oscillator>().frequencies[35];
+							SynthSource_35.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_35.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesHigh[3,0].color = selectedColor;
 						}
 						else if (noteTilesHigh[3,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteHigh[3][x, y] == false) {
@@ -3697,6 +3768,8 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_36.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_36.GetComponent<Oscillator>().gain2 = gain2;
 							SynthSource_36.GetComponent<Oscillator>().frequency = SynthSource_36.GetComponent<Oscillator>().frequencies[36];	
+							SynthSource_36.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_36.GetComponent<AudioEchoFilter>().wetMix = wetMix;
 							noteTilesHigh[4,0].color = selectedColor;
 						}
 						else if (noteTilesHigh[4,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteHigh[4][x, y] == false) {
@@ -3709,6 +3782,8 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_37.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_37.GetComponent<Oscillator>().gain2 = gain2;
 							SynthSource_37.GetComponent<Oscillator>().frequency = SynthSource_37.GetComponent<Oscillator>().frequencies[37];
+							SynthSource_37.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_37.GetComponent<AudioEchoFilter>().wetMix = wetMix;
 							noteTilesHigh[5,0].color = selectedColor;
 						}
 						else if (noteTilesHigh[5,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteHigh[5][x, y] == false) {
@@ -3721,6 +3796,8 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_38.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_38.GetComponent<Oscillator>().gain2 = gain2;
 							SynthSource_38.GetComponent<Oscillator>().frequency = SynthSource_38.GetComponent<Oscillator>().frequencies[38];	
+							SynthSource_38.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_38.GetComponent<AudioEchoFilter>().wetMix = wetMix;
 							noteTilesHigh[6,0].color = selectedColor;
 						}
 						else if (noteTilesHigh[6,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteHigh[6][x, y] == false) {
@@ -3732,7 +3809,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_39.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_39.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_39.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_39.GetComponent<Oscillator>().frequency = SynthSource_39.GetComponent<Oscillator>().frequencies[39];	
+							SynthSource_39.GetComponent<Oscillator>().frequency = SynthSource_39.GetComponent<Oscillator>().frequencies[39];
+							SynthSource_39.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_39.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesHigh[7,0].color = selectedColor;
 						}
 						else if (noteTilesHigh[7,0] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteHigh[7][x, y] == false) {
@@ -3744,7 +3823,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_40.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_40.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_40.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_40.GetComponent<Oscillator>().frequency = SynthSource_40.GetComponent<Oscillator>().frequencies[40];	
+							SynthSource_40.GetComponent<Oscillator>().frequency = SynthSource_40.GetComponent<Oscillator>().frequencies[40];
+							SynthSource_40.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_40.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesHigh[0,1].color = selectedColor;
 						}
 						else if (noteTilesHigh[0,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteHigh[8][x, y] == false) {
@@ -3756,7 +3837,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_41.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_41.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_41.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_41.GetComponent<Oscillator>().frequency = SynthSource_41.GetComponent<Oscillator>().frequencies[41];	
+							SynthSource_41.GetComponent<Oscillator>().frequency = SynthSource_41.GetComponent<Oscillator>().frequencies[41];
+							SynthSource_41.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_41.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesHigh[1,1].color = selectedColor;
 						}
 						else if (noteTilesHigh[1,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteHigh[9][x, y] == false) {
@@ -3768,7 +3851,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_42.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_42.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_42.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_42.GetComponent<Oscillator>().frequency = SynthSource_42.GetComponent<Oscillator>().frequencies[42];	
+							SynthSource_42.GetComponent<Oscillator>().frequency = SynthSource_42.GetComponent<Oscillator>().frequencies[42];
+							SynthSource_42.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_42.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesHigh[2,1].color = selectedColor;
 						}
 						else if (noteTilesHigh[2,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteHigh[10][x, y] == false) {
@@ -3781,6 +3866,8 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_43.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_43.GetComponent<Oscillator>().gain2 = gain2;
 							SynthSource_43.GetComponent<Oscillator>().frequency = SynthSource_43.GetComponent<Oscillator>().frequencies[43];	
+							SynthSource_43.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_43.GetComponent<AudioEchoFilter>().wetMix = wetMix;
 							noteTilesHigh[3,1].color = selectedColor;
 						}
 						else if (noteTilesHigh[3,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteHigh[11][x, y] == false) {
@@ -3792,7 +3879,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_44.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_44.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_44.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_44.GetComponent<Oscillator>().frequency = SynthSource_44.GetComponent<Oscillator>().frequencies[44];	
+							SynthSource_44.GetComponent<Oscillator>().frequency = SynthSource_44.GetComponent<Oscillator>().frequencies[44];
+							SynthSource_44.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_44.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesHigh[4,1].color = selectedColor;
 						}
 						else if (noteTilesHigh[4,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteHigh[12][x, y] == false) {
@@ -3805,6 +3894,8 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_44.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_45.GetComponent<Oscillator>().gain2 = gain2;
 							SynthSource_45.GetComponent<Oscillator>().frequency = SynthSource_45.GetComponent<Oscillator>().frequencies[45];	
+							SynthSource_45.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_45.GetComponent<AudioEchoFilter>().wetMix = wetMix;
 							noteTilesHigh[5,1].color = selectedColor;
 						}
 						else if (noteTilesHigh[5,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteHigh[13][x, y] == false) {
@@ -3816,7 +3907,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_46.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_46.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_46.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_46.GetComponent<Oscillator>().frequency = SynthSource_46.GetComponent<Oscillator>().frequencies[46];	
+							SynthSource_46.GetComponent<Oscillator>().frequency = SynthSource_46.GetComponent<Oscillator>().frequencies[46];
+							SynthSource_46.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_46.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesHigh[6,1].color = selectedColor;
 						}
 						else if (noteTilesHigh[6,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteHigh[14][x, y] == false) {
@@ -3828,7 +3921,9 @@ public class OperatorTile : MonoBehaviour {
 							SynthSource_47.GetComponent<Oscillator>().gain = synthVolume;
 							SynthSource_47.GetComponent<Oscillator>().pitch = pitch;
 							SynthSource_47.GetComponent<Oscillator>().gain2 = gain2;
-							SynthSource_47.GetComponent<Oscillator>().frequency = SynthSource_47.GetComponent<Oscillator>().frequencies[47];	
+							SynthSource_47.GetComponent<Oscillator>().frequency = SynthSource_47.GetComponent<Oscillator>().frequencies[47];
+							SynthSource_47.GetComponent<AudioEchoFilter>().delay = delay;
+							SynthSource_47.GetComponent<AudioEchoFilter>().wetMix = wetMix;	
 							noteTilesHigh[7,1].color = selectedColor;
 						}
 						else if (noteTilesHigh[7,1] != null && gameObject.name == OperatorManager.instance.tiles[x, y].name && OperatorManager.instance.noteHigh[15][x, y] == false) {
@@ -3928,7 +4023,5 @@ public class OperatorTile : MonoBehaviour {
 	IEnumerator StopNote() {
 		yield return new WaitForSeconds(ms);
 		Oscillator1.GetComponent<Oscillator>().gain = 0;
-		Oscillator2.GetComponent<Oscillator>().gain = 0;
-		Oscillator3.GetComponent<Oscillator>().gain = 0;
 	}		
 }
