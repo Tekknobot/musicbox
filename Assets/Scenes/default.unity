@@ -1092,7 +1092,7 @@ RectTransform:
   - {fileID: 1802963397}
   - {fileID: 2104914168}
   m_Father: {fileID: 642797317}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.00001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1641,6 +1641,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91601935}
   m_CullTransparentMesh: 0
+--- !u!1 &95553360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5231719288517554280, guid: 5b45a0984db871743a5e78f6130404c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 223110598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!166 &95553361
+AudioChorusFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95553360}
+  m_Enabled: 1
+  m_DryMix: 0.5
+  m_WetMix1: 0.5
+  m_WetMix2: 0.5
+  m_WetMix3: 0.5
+  m_Delay: 40
+  m_Rate: 0.8
+  m_Depth: 0.03
 --- !u!1 &97408388
 GameObject:
   m_ObjectHideFlags: 0
@@ -2961,6 +2982,196 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220103771}
   m_CullTransparentMesh: 0
+--- !u!1001 &223110598
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5231719288517554280, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: m_Name
+      value: Oscillator3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: octaveDown
+      value: 
+      objectReference: {fileID: 1995284823}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: octaveUp
+      value: 
+      objectReference: {fileID: 1762265077}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: octaveDefault
+      value: 
+      objectReference: {fileID: 1432127431}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: NoteManagerLow
+      value: 
+      objectReference: {fileID: 2086972312}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: NoteManagerMid
+      value: 
+      objectReference: {fileID: 1283178627}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: NoteManagerHigh
+      value: 
+      objectReference: {fileID: 1751147081}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: amplitude2
+      value: 0.0068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: frequency2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: SynthPads
+      value: 
+      objectReference: {fileID: 95553360}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: gain2
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: sineWave
+      value: 
+      objectReference: {fileID: 1435012285}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: squareWave
+      value: 
+      objectReference: {fileID: 778914516}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: triangleWave
+      value: 
+      objectReference: {fileID: 1951072536}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: octaveOne
+      value: 
+      objectReference: {fileID: 1995284823}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: octaveTwo
+      value: 
+      objectReference: {fileID: 1432127431}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: octaveThree
+      value: 
+      objectReference: {fileID: 1762265077}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: OperatorTile
+      value: 
+      objectReference: {fileID: 3785095208035288645, guid: e00c7df670c87ff4da3025392772ed88,
+        type: 3}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: noteLength
+      value: 0.117
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: legato
+      value: 
+      objectReference: {fileID: 996542551}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: legatoButton
+      value: 
+      objectReference: {fileID: 1332462502}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: gain3
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: frequency3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554286, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: Priority
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554287, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554287, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554287, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554287, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554287, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554287, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554287, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554287, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554287, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554287, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554287, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b45a0984db871743a5e78f6130404c7, type: 3}
 --- !u!1 &228186278
 GameObject:
   m_ObjectHideFlags: 0
@@ -3766,7 +3977,7 @@ GameObject:
   - component: {fileID: 392925186}
   - component: {fileID: 392925187}
   m_Layer: 5
-  m_Name: empty
+  m_Name: Frequency3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3787,7 +3998,7 @@ RectTransform:
   - {fileID: 727165751}
   - {fileID: 1156901575}
   m_Father: {fileID: 642797317}
-  m_RootOrder: 7
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.00001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3837,10 +4048,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1105847052}
   m_HandleRect: {fileID: 936752834}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 130.81
+  m_MaxValue: 1975.53
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 130.81
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4128,7 +4339,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &409792632
 AudioSource:
@@ -4258,7 +4469,7 @@ RectTransform:
   - {fileID: 2131722214}
   - {fileID: 1641466156}
   m_Father: {fileID: 642797317}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.00001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6352,11 +6563,11 @@ RectTransform:
   - {fileID: 1925257387}
   - {fileID: 2004104864}
   - {fileID: 1235014354}
+  - {fileID: 392925186}
   - {fileID: 411592251}
   - {fileID: 56929481}
   - {fileID: 1873160730}
   - {fileID: 2086072088}
-  - {fileID: 392925186}
   m_Father: {fileID: 2062394949}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10788,7 +10999,7 @@ GameObject:
   - component: {fileID: 1235014354}
   - component: {fileID: 1235014355}
   m_Layer: 5
-  m_Name: Pitch
+  m_Name: Gain3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10859,10 +11070,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 28674851}
   m_HandleRect: {fileID: 1986476238}
   m_Direction: 0
-  m_MinValue: 1
-  m_MaxValue: 10
+  m_MinValue: 0.1
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 10
+  m_Value: 0.1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -14517,7 +14728,7 @@ PrefabInstance:
     - target: {fileID: 5231719288517554280, guid: 5b45a0984db871743a5e78f6130404c7,
         type: 3}
       propertyPath: m_Name
-      value: LFO
+      value: Oscillator2
       objectReference: {fileID: 0}
     - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
         type: 3}
@@ -14567,7 +14778,7 @@ PrefabInstance:
     - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
         type: 3}
       propertyPath: gain2
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
         type: 3}
@@ -14625,6 +14836,16 @@ PrefabInstance:
       propertyPath: legatoButton
       value: 
       objectReference: {fileID: 1332462502}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: gain3
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: frequency3
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5231719288517554286, guid: 5b45a0984db871743a5e78f6130404c7,
         type: 3}
       propertyPath: Priority
@@ -17308,7 +17529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1817557313}
   m_Layer: 0
-  m_Name: Oscillators
+  m_Name: SeqOscillators
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17329,7 +17550,7 @@ Transform:
   - {fileID: 999247774}
   - {fileID: 1803753536}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1819834914
 PrefabInstance:
@@ -18542,7 +18763,7 @@ GameObject:
   - component: {fileID: 1873160730}
   - component: {fileID: 1873160731}
   m_Layer: 5
-  m_Name: Frequency2
+  m_Name: Pitch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18563,7 +18784,7 @@ RectTransform:
   - {fileID: 465699062}
   - {fileID: 532484111}
   m_Father: {fileID: 642797317}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.00001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18613,10 +18834,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2069447280}
   m_HandleRect: {fileID: 816741869}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 30
+  m_MinValue: 1
+  m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 30
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -21692,7 +21913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -21822,7 +22043,7 @@ RectTransform:
   - {fileID: 1057216120}
   - {fileID: 891423340}
   m_Father: {fileID: 642797317}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.00001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21872,7 +22093,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 2005478706}
   m_HandleRect: {fileID: 1665442910}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.1
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.1
@@ -28056,7 +28277,7 @@ PrefabInstance:
     - target: {fileID: 5231719288517554280, guid: 5b45a0984db871743a5e78f6130404c7,
         type: 3}
       propertyPath: m_Name
-      value: SynthPads
+      value: Oscillator1
       objectReference: {fileID: 0}
     - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
         type: 3}
@@ -28096,7 +28317,7 @@ PrefabInstance:
     - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
         type: 3}
       propertyPath: frequency2
-      value: 5.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
         type: 3}
@@ -28164,6 +28385,16 @@ PrefabInstance:
       propertyPath: legatoButton
       value: 
       objectReference: {fileID: 1332462502}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: gain3
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231719288517554281, guid: 5b45a0984db871743a5e78f6130404c7,
+        type: 3}
+      propertyPath: frequency3
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5231719288517554286, guid: 5b45a0984db871743a5e78f6130404c7,
         type: 3}
       propertyPath: Priority

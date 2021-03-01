@@ -23,20 +23,20 @@ public class Oscillator : MonoBehaviour {
     public Button squareWave;
     public Button triangleWave;   
 
-    public Toggle legatoButton;
-    
-    public bool legatoActive = false;
-
     public GameObject NoteManagerLow;
     public GameObject NoteManagerMid;
     public GameObject NoteManagerHigh;    
 
-    [Range(1, 10)]
+    [Range(1, 5)]
     public float pitch;   
     [Range(0, 30)]
     public float frequency2;   
-    [Range(0, 1)]
-    public float gain2;          
+    [Range(0.1f, 1)]
+    public float gain2;     
+    [Range(0, 30)]
+    public float frequency3;   
+    [Range(0.1f, 1)]
+    public float gain3;           
 
     public bool sine;
     public bool square;
@@ -54,7 +54,10 @@ public class Oscillator : MonoBehaviour {
 	public float timeSinceLevelLoad;
     public float step;
 	public GameObject Pad1;
-    public GameObject LFO;
+
+    public GameObject Oscillator1;
+    public GameObject Oscillator2;
+    public GameObject Oscillator3;
 
     public int marker;
     bool hasCoroutineStarted = false;
@@ -141,7 +144,8 @@ public class Oscillator : MonoBehaviour {
 
     void Update() {
         Pad1 = GameObject.Find("Pad 1");
-        LFO = GameObject.Find("LFO");
+        Oscillator1 = GameObject.Find("Oscillator1");
+        Oscillator2 = GameObject.Find("Oscillator2");
 
         bpm = Pad1.GetComponent<OperatorTile>().bpm;
         ms = Pad1.GetComponent<OperatorTile>().ms;
@@ -149,10 +153,15 @@ public class Oscillator : MonoBehaviour {
         timeSinceLevelLoad = Pad1.GetComponent<OperatorTile>().timeSinceLevelLoad;
         step = nextbeatTime - timeSinceLevelLoad;
 
-		if (gameObject.name == "SynthPads") {
-			gameObject.GetComponent<Oscillator>().pitch = GameObject.Find("Pitch").GetComponent<Slider>().value;
-            gameObject.GetComponent<Oscillator>().gain2 = GameObject.Find("Gain2").GetComponent<Slider>().value;
+		if (gameObject.name == "Oscillator1") {
+            Oscillator1.GetComponent<Oscillator>().gain2 = GameObject.Find("Gain2").GetComponent<Slider>().value;
+            Oscillator1.GetComponent<Oscillator>().pitch = GameObject.Find("Pitch").GetComponent<Slider>().value;
 		}      
+
+		if (gameObject.name == "Oscillator2") {
+            Oscillator2.GetComponent<Oscillator>().frequency = GameObject.Find("Frequency3").GetComponent<Slider>().value;
+            Oscillator2.GetComponent<Oscillator>().gain2 = GameObject.Find("Gain3").GetComponent<Slider>().value;
+		}          
 
         if (low == true) { 
             octaveOne.Select(); 
@@ -247,14 +256,14 @@ public class Oscillator : MonoBehaviour {
 	}    
 
     void OnAudioFilterRead(float[] data, int channels) {
-        increment = (frequency * 2.0 * Mathf.PI / sampling_frequency);
+        increment = ((frequency * pitch) * 2.0 * Mathf.PI / sampling_frequency);
         
         if (sine == true) { 
             for (int i = 0; i < data.Length; i += channels) {
                 phase += increment;
                 
                 //sine
-                data[i] = (float)(gain * (Mathf.Sin((float)phase >= gain2 ? -1 : 1)));
+                data[i] = (float)(gain * (Mathf.Sin((float)phase * gain2)));
 
                 if (channels == 2) {
                     data[i + 1] = data[i];
@@ -271,11 +280,11 @@ public class Oscillator : MonoBehaviour {
                 phase += increment;
 
                 //sqaure
-                if (gain * Mathf.Sin((float)phase) >= 0 * gain) {
-                    data[i] = (float)gain * 0.6f;
+                if (gain * Mathf.Sin((float)phase * gain2) >= 0 * gain) {
+                    data[i] = (float)gain;
                 }
                 else {
-                    data[i] = (-(float)gain) * 0.6f;
+                    data[i] = (-(float)gain);
                 }
 
                 if (channels == 2) {
@@ -295,6 +304,8 @@ public class Oscillator : MonoBehaviour {
                 //triangle
                 data[i] = (float)(gain * (phase < gain2 ? Mathf.Lerp(-1, 1, Mathf.InverseLerp(0, gain2, (float)phase)) :
                             Mathf.Lerp(1, -1, Mathf.InverseLerp(gain2, 1, (float)phase))));
+
+                // data[i] = (float)(gain * (double)Mathf.PingPong((float)phase, 1.0f));
 
                 if (channels == 2) {
                     data[i + 1] = data[i];
