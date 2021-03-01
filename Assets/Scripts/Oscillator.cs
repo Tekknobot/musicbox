@@ -280,7 +280,7 @@ public class Oscillator : MonoBehaviour {
                 phase += increment;
 
                 //sqaure
-                if (gain * Mathf.Sin((float)phase * gain2) >= 0 * gain) {
+                if (gain * Mathf.Sin((float)phase) >= 0 * gain) {
                     data[i] = (float)gain;
                 }
                 else {
