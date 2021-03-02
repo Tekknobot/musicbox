@@ -14,12 +14,29 @@ public class BoardManager : MonoBehaviour {
 
 	public bool IsShifting { get; set; }
 
+	public AudioSource spectrumSource;
+	public AudioClip clip;
+	bool hasClipStarted = false;
+
+	void Awake() {
+		if (spectrumSource == null) spectrumSource = gameObject.AddComponent<AudioSource>();
+	}
+
 	void Start () {
 		instance = GetComponent<BoardManager>();
 
 		Vector2 offset = tile.GetComponent<SpriteRenderer>().bounds.size;
         CreateBoard(offset.x, offset.y); 
 		previousBelow = GetComponent<SpriteRenderer>();
+	}
+
+	void Update() {
+		spectrumSource.clip = clip;
+		if (hasClipStarted == false) {
+			spectrumSource.loop = true;
+			spectrumSource.Play();
+			hasClipStarted = true;
+		}	
 	}
 
     private void CreateBoard (float xOffset, float yOffset) {
