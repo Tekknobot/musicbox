@@ -1100,13 +1100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panels: {fileID: 0}
-  operatorObject: {fileID: 0}
-  samplerObject: {fileID: 0}
-  operatorTile: {fileID: 0}
   snow: {fileID: 0}
   audioSource: {fileID: 0}
-  SEQ: {fileID: 0}
-  CHOPS: {fileID: 0}
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
   journeyTime: 3
