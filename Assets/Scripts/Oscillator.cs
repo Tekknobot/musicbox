@@ -276,10 +276,10 @@ public class Oscillator : MonoBehaviour {
 
                 //sqaure
                 if (gain * Mathf.Sin((float)phase) >= 0 * gain) {
-                    data[i] = (float)gain * 0.6f;
+                    data[i] = (float)gain * (Mathf.Sin((float)phase * gain2));
                 }
                 else {
-                    data[i] = (-(float)gain * 0.6f);
+                    data[i] = (-(float)gain * (Mathf.Sin((float)phase * gain2)));
                 }
 
                 if (channels == 2) {
