@@ -24,6 +24,9 @@ public class OperatorManager : MonoBehaviour {
 	public bool[][,] noteHigh = new bool[16][,];
 	public string[][,] notePadsHigh = new string[1][,];	
 
+	public bool[][,] noteSub = new bool[16][,];
+	public string[][,] notePadsSub = new string[1][,];		
+
 	public bool IsShifting { get; set; }
 
 	void Start () {
@@ -87,6 +90,14 @@ public class OperatorManager : MonoBehaviour {
 
 		for (int x = 0; x < notePadsHigh.Length; x++) { 
 			notePadsHigh[x] = new string[xSize,ySize];
-		}							
+		}	
+
+		for (int x = 0; x < noteSub.Length; x++) { 
+			noteSub[x] = new bool[xSize,ySize];
+		}	
+
+		for (int x = 0; x < notePadsSub.Length; x++) { 
+			notePadsSub[x] = new string[xSize,ySize];
+		}								
 	}
 }

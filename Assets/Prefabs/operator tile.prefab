@@ -209,6 +209,31 @@ MonoBehaviour:
   Note_46: {fileID: -1459506761166172322, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35,
     type: 3}
   Note_47: {fileID: 6504906643388934097, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_48: {fileID: -4559793940692599366, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35,
+    type: 3}
+  Note_49: {fileID: -7376523744819430024, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35,
+    type: 3}
+  Note_50: {fileID: -6145539527145275126, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35,
+    type: 3}
+  Note_51: {fileID: -3197109913481216909, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35,
+    type: 3}
+  Note_52: {fileID: -8674250405695429965, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35,
+    type: 3}
+  Note_53: {fileID: 3156078998815925825, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_54: {fileID: 1525873896960237229, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_55: {fileID: 8724896482674121634, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_56: {fileID: -6297816754281036751, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35,
+    type: 3}
+  Note_57: {fileID: 2445713637723292806, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_58: {fileID: 2673208461699505887, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_59: {fileID: 609843475841173356, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_60: {fileID: -3832689324600428781, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35,
+    type: 3}
+  Note_61: {fileID: 188827301137470634, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35, type: 3}
+  Note_62: {fileID: -6779590506782001280, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35,
+    type: 3}
+  Note_63: {fileID: -3116296547160890170, guid: b06dcf5fe7ce7ea4ba827d606c8a0a35,
+    type: 3}
   sample0: {fileID: -8363607444970788078, guid: 7384ac96c02561f42913a9cce0a25bd6,
     type: 3}
   sample1: {fileID: 3601817584302600694, guid: 7384ac96c02561f42913a9cce0a25bd6, type: 3}
@@ -274,9 +299,15 @@ MonoBehaviour:
   chopSource: {fileID: -3554584574793152228}
   bpm: 0
   ms: 0
-  SynthSourcePad: {fileID: 5231719288517554280, guid: 5b45a0984db871743a5e78f6130404c7,
-    type: 3}
+  nextbeatTime: 0
+  timeSinceLevelLoad: 0
+  Oscillator1: {fileID: 0}
+  Oscillator2: {fileID: 0}
+  Oscillator3: {fileID: 0}
   SynthVols: []
+  gain2s: []
+  stepCount: 0
+  legatoButton: {fileID: 0}
 --- !u!82 &-3731806925748220179
 AudioSource:
   m_ObjectHideFlags: 0

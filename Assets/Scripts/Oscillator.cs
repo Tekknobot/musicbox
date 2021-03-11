@@ -15,6 +15,7 @@ public class Oscillator : MonoBehaviour {
 
     public float[] frequencies;
 
+    public Button octaveSub;
     public Button octaveOne;
     public Button octaveTwo;
     public Button octaveThree;
@@ -23,6 +24,7 @@ public class Oscillator : MonoBehaviour {
     public Button squareWave;
     public Button triangleWave;   
 
+    public GameObject NoteManagerSub;
     public GameObject NoteManagerLow;
     public GameObject NoteManagerMid;
     public GameObject NoteManagerHigh;    
@@ -40,6 +42,7 @@ public class Oscillator : MonoBehaviour {
     public bool square;
     public bool triangle;
 
+    public bool sub;
     public bool low;
     public bool mid;
     public bool high;   
@@ -67,6 +70,7 @@ public class Oscillator : MonoBehaviour {
         sine = true;
         low = true;
 
+        octaveSub.GetComponent<Button>().onClick.AddListener(OctaveSubOnClick); 
 		octaveOne.GetComponent<Button>().onClick.AddListener(OctaveOneOnClick); 
 		octaveTwo.GetComponent<Button>().onClick.AddListener(OctaveTwoOnClick);
 		octaveThree.GetComponent<Button>().onClick.AddListener(OctaveThreeOnClick);  
@@ -85,7 +89,7 @@ public class Oscillator : MonoBehaviour {
         
         octaveOne.Select();
         
-        frequencies = new float[48];
+        frequencies = new float[64];
         frequencies[0] = 130.81f;   // C3
         frequencies[1] = 138.59f;   // C#3
         frequencies[2] = 146.83f;   // D3 
@@ -135,7 +139,24 @@ public class Oscillator : MonoBehaviour {
         frequencies[44] = 1661.22f;  // G#6                        
         frequencies[45] = 1760.00f;  // A6
         frequencies[46] = 1864.66f;  // A#6
-        frequencies[47] = 1975.53f;  // B6        
+        frequencies[47] = 1975.53f;  // B6    
+
+        frequencies[48] = 51.91f;   // G#1
+        frequencies[49] = 55.00f;   // A1
+        frequencies[50] = 58.27f;   // A#1 
+        frequencies[51] = 61.74f;   // B1
+        frequencies[52] = 65.41f;  // C2                       
+        frequencies[53] = 69.30f;  // C#2 
+        frequencies[54] = 73.42f;  // D2 
+        frequencies[55] = 77.78f;  // D#2 
+        frequencies[56] = 82.41f;  // E2 
+        frequencies[57] = 87.31f;  // F2 
+        frequencies[58] = 92.50f;  // F#2
+        frequencies[59] = 98.00f;  // G2
+        frequencies[60] = 103.83f;  // G#2                        
+        frequencies[61] = 110.00f;  // A2
+        frequencies[62] = 116.54f;  // A#2
+        frequencies[63] = 123.47f;  // B2             
 
         StartCoroutine(DefaultNotes());      
     }
@@ -153,7 +174,7 @@ public class Oscillator : MonoBehaviour {
 
 		if (gameObject.name == "Oscillator1") {
             Oscillator1.GetComponent<Oscillator>().gain2 = GameObject.Find("Gain2").GetComponent<Slider>().value;
-            Oscillator1.GetComponent<Oscillator>().pitch = GameObject.Find("Pitch").GetComponent<Slider>().value;
+            //Oscillator1.GetComponent<Oscillator>().pitch = GameObject.Find("Pitch").GetComponent<Slider>().value;
             Oscillator1.GetComponent<AudioEchoFilter>().delay = GameObject.Find("Delay").GetComponent<Slider>().value;
             Oscillator1.GetComponent<AudioEchoFilter>().wetMix = GameObject.Find("WetMix").GetComponent<Slider>().value;
 		}         
@@ -167,30 +188,50 @@ public class Oscillator : MonoBehaviour {
         else if (high == true) {
             octaveThree.Select();         
         } 
+        else if (low == true) {
+            octaveSub.Select();
+        }
     }
 
+	void OctaveSubOnClick(){ 
+        NoteManagerSub.SetActive(true);     
+        NoteManagerLow.SetActive(false);
+        NoteManagerMid.SetActive(false);
+        NoteManagerHigh.SetActive(false);  
+        sub = true;
+        low = false;
+        mid = false;
+        high = false;              
+	}
+
 	void OctaveOneOnClick(){      
+        NoteManagerSub.SetActive(false);
         NoteManagerLow.SetActive(true);
         NoteManagerMid.SetActive(false);
         NoteManagerHigh.SetActive(false);  
+        sub = false;
         low = true;
         mid = false;
         high = false;              
 	}
 
 	void OctaveTwoOnClick(){   
+        NoteManagerSub.SetActive(false);
         NoteManagerLow.SetActive(false);
         NoteManagerMid.SetActive(true);
-        NoteManagerHigh.SetActive(false);    
+        NoteManagerHigh.SetActive(false); 
+        sub = false;   
         low = false;
         mid = true;
         high = false;                         
 	}
 
 	void OctaveThreeOnClick(){   
+        NoteManagerSub.SetActive(false);
         NoteManagerLow.SetActive(false);
         NoteManagerMid.SetActive(false);
         NoteManagerHigh.SetActive(true);    
+        sub = false;
         low = false;
         mid = false;
         high = true;                   
