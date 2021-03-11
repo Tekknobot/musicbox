@@ -188,7 +188,7 @@ public class Oscillator : MonoBehaviour {
         else if (high == true) {
             octaveThree.Select();         
         } 
-        else if (low == true) {
+        else if (sub == true) {
             octaveSub.Select();
         }
     }
