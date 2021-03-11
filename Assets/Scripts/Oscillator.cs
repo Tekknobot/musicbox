@@ -357,5 +357,6 @@ public class Oscillator : MonoBehaviour {
         NoteManagerLow.SetActive(true);
         NoteManagerMid.SetActive(false);
         NoteManagerHigh.SetActive(false); 
+        NoteManagerSub.SetActive(false);
     }       
 }      
