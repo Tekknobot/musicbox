@@ -19,6 +19,7 @@ public class SceneLoader : MonoBehaviour {
     void Start()
     {
         startTime = Time.time;
+        //snow.SetActive(false);
     }      
 
     void Update() {

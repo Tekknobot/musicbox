@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: -6280183057356667119}
   - component: {fileID: -8784558468396683308}
   - component: {fileID: -3554584574793152228}
+  - component: {fileID: 2908554001212504926}
   m_Layer: 0
   m_Name: operator tile
   m_TagString: tile
@@ -61,7 +62,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 37da93c16bb27084787c615b18773e6c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1181,3 +1182,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2908554001212504926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3785095208035288645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2f5812b6451ad499a97b997723723f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceA: {r: 0, g: 0, b: 1, a: 1}
+  targetA: {r: 1, g: 0, b: 0, a: 1}
+  sourceB: {r: 0, g: 0, b: 1, a: 1}
+  targetB: {r: 1, g: 0, b: 0, a: 1}
+  sourceC: {r: 0, g: 0, b: 1, a: 1}
+  targetC: {r: 1, g: 0, b: 0, a: 1}
